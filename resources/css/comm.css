@@ -7,6 +7,9 @@ html {
 body {
 	font-family: gotham, sans-serif; 
 	margin: 0;
+	background-image: url("../images/Radial_Halftone_2 copy.svg");
+	background-color: lightgray;
+	background-repeat: no-repeat;
 }
 
 .container {
@@ -83,7 +86,6 @@ nav li {
 	}
 }
 
-
 header {
   display: flex;
   align-items: center;
@@ -93,30 +95,54 @@ header {
   height: 80px;
   font-size: 14px;
   font-weight: bold;
-  background-color: #007298;
+  background-color: #362f2d;
 }
 
 header nav {
 	padding-right: 40px; 
 }
 
+/** Main Image **/ 
+
+
+.headline {
+	display: flex; 
+	align-items: center;
+}
+
+.headline img {
+	display: none;
+}
+
 .headline video {
+	display: block;
 	width: 100%;  
-	background-size: cover; 
-	
-	
+	background-size: cover;
+	pointer-events: none;
 }
 
 
-@media only screen and (max-resolution: 768px) {
-.headline_fallback {
-	background-image: url("../images/25770997707_64e94d86cd_k.jpg");
-	background-size: cover; 
-	background-repeat: no-repeat; 
-	background-position: center; 
-	height: 24em; 
+
+@media only screen and (min-resolution: 300dpi), only screen and (max-width: 1024px) {
+		
+		.headline video {
+			display: none; 
+		}
+		
+	.headline_fallback {
+		display: block; 
+		align-items: center; 
+		background-image: url("../images/25770997707_64e94d86cd_k.jpg");
+		background-size: cover; 
+		background-repeat: no-repeat; 
+		background-position: center; 
+		height: 28em; 
+		width: 100%; 
+		postion: relative; 
+		top: 2em;
 	}
 }
+	
 
 .headline .container {
 	display: flex; 
@@ -135,8 +161,16 @@ header nav {
 }
 
 .about_us {
-	margin-left: 4em;
-	width: 4em; 
-	position: relative; 
-	top: 5em; 
+	width: 40%; 
+	height: 4em; 
+	margin-left: 3em;
+	margin-bottom: 3em;
+	padding: 4px; 
+	postion: relative; 
+	top: 10em; 
+}
+
+.about_us p {
+	font-size: 16px; 
+	line-height: 1.5em; 
 }

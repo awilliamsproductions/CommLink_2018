@@ -1,4 +1,16 @@
+
+/* "Tamming" Box Model With Reset */
+
+html { 
+  box-sizing: border-box; 
+}
+*, *:before, *:after { 
+  box-sizing: inherit;
+}
+
+
 /** Universal Changes **/
+
 
 html {
 	font-size: 18px; 
@@ -7,9 +19,6 @@ html {
 body {
 	font-family: gotham, sans-serif; 
 	margin: 0;
-	background-image: url("../images/Radial_Halftone_2 copy.svg");
-	background-color: lightgray;
-	background-repeat: no-repeat;
 }
 
 .container {
@@ -17,23 +26,26 @@ body {
 	margin: 0 auto; 
 }
 
+
 div {
 	display: block; 
+	border: 1px solid green ;
 }
 
-/** Navigation **/ 
+
+/** Company Header / Navigation **/ 
+
 
 .logo {
 	display: flex; 
 	align-items: center; 
+	padding-left: 2rem; 
 	flex-grow: 1; 
-	padding-left: 4rem; 
 }
 
 .logo img {
-	width: auto; 
-	height: 60px; 
-	margin-right: .75em; 
+	height: 3rem; 
+	padding-right: 1rem; 
 }
 
 
@@ -89,8 +101,7 @@ nav li {
 header {
   display: flex;
   align-items: center;
-  position: fixed;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   height: 80px;
   font-size: 14px;
@@ -102,19 +113,25 @@ header nav {
 	padding-right: 40px; 
 }
 
-/** Main Image **/ 
 
+/** Body / Main Image **/ 
 
-.headline {
-	display: flex; 
+.dots {
+	background-image: url("../images/Radial_Halftone_2 copy.svg");
+	background-color: lightgray;
+	background-repeat: no-repeat;
+}
+
+.main-banner {
+	display: block; 
 	align-items: center;
 }
 
-.headline img {
+.main-banner img {
 	display: none;
 }
 
-.headline video {
+.main-banner video {
 	display: block;
 	width: 100%;  
 	background-size: cover;
@@ -125,11 +142,15 @@ header nav {
 
 @media only screen and (min-resolution: 300dpi), only screen and (max-width: 1024px) {
 		
-		.headline video {
+		.main-banner video {
 			display: none; 
 		}
+	
+	.headline-text {
+		display: none; 
+	}
 		
-	.headline_fallback {
+	.main-banner_fallback {
 		display: block; 
 		align-items: center; 
 		background-image: url("../images/25770997707_64e94d86cd_k.jpg");
@@ -144,33 +165,82 @@ header nav {
 }
 	
 
-.headline .container {
-	display: flex; 
+.main-banner .container {
+	display:block; 
 	align-items: center; 
-	padding: 5px 0; 
-	
+	justify-content: center;
+	padding: 5px 0; 	
 }
 
 .headline-text {
-	color: white;
-	postion: relative; 
-	top: 12em;
-	width: 30em; 
-	text-align: center;  
-	
+	position: relative;
+	text-align: center;
+  	padding: 2rem 3rem;
+ 	background-color: #362f2d;
+	line-height: normal;
+  	color: white;
+	opacity: 0.6;
 }
+
+.headline-text h2, h3 { 
+	text-transform: uppercase;
+	opacity: 1;
+}
+
+.headline-text h2 {
+	font-size: 2rem;
+	line-height: .40em; 
+}
+
+.headline-text h3 {
+	font-size: .80rem;
+}
+
+.centered {
+    position: absolute;
+ 	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+
+
 
 .about_us {
 	width: 40%; 
-	height: 4em; 
-	margin-left: 3em;
-	margin-bottom: 3em;
+	height: auto; 
+	margin: 3rem 3rem 3rem 3rem;
 	padding: 4px; 
-	postion: relative; 
-	top: 10em; 
+}
+
+.about_us .container {
+  display: flex;
+  align-items: center;
+  padding: .66rem 0 .66rem 0.5rem;
 }
 
 .about_us p {
+	text-align: center;
 	font-size: 16px; 
 	line-height: 1.5em; 
+	width: 500px;
 }
+
+
+.box {
+	position: relative; 
+	top: 4rem;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	background-color: orangered; 
+	color: white; 
+	height: 20rem;
+	margin-top: 5rem;
+}
+
+.box img {
+	background-size: cover; 
+	background-repeat: no-repeat; 
+	background-position: center; 
+	}
+
